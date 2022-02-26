@@ -1,0 +1,88 @@
+/* Typography */
+
+/* Layout */
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	height: 100vh;
+}
+
+.left-background {
+	flex: 1;
+}
+
+.right-background {
+	flex: 1;
+}
+
+.calculator-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	height: 50vh;
+	padding: 1em;
+	gap: 1rem;
+}
+
+.calculator-display {
+	flex: 1;
+	height: 10vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.top-display {
+	flex: 1;
+}
+
+.bottom-display {
+	flex: 2;
+}
+
+.calculator-keyboard {
+	flex: 3;
+	display: grid;
+	gap: 1rem 1rem;
+	width: 30vh;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* Style */
+.left-background {
+	background: rgb(114, 115, 119);
+	background: linear-gradient(
+		32deg,
+		rgba(114, 115, 119, 1) 0%,
+		rgb(101, 109, 128) 45%,
+		rgba(1, 6, 17, 1) 100%
+	);
+}
+
+.right-background {
+	background: rgb(89, 117, 91);
+	background: linear-gradient(
+		336deg,
+		rgba(89, 117, 91, 1) 0%,
+		rgba(89, 166, 114, 1) 45%,
+		rgba(195, 255, 235, 1) 100%
+	);
+}
+
+.calculator-container {
+	background: rgb(93, 93, 93);
+	background: linear-gradient(
+		164deg,
+		rgba(93, 93, 93, 1) 0%,
+		rgba(65, 65, 65, 1) 100%
+	);
+	border-radius: 1rem;
+	box-shadow: 0px 0px 34px 15px #000000;
+}

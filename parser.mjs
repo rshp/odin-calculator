@@ -79,6 +79,7 @@ function evaluateArray(arry) {
 	}
 	return +calculated;
 }
-let testString = '0.21^(87+36)/10-23^2*(2.9-1.58)^.5+(((.98+48)*3.77)^2.9)-3.9';
-let parsed = expressionToArray(testString);
-console.log(evaluateArray(parsed));
+export function evaluateExpression(string) {
+	let arry = expressionToArray(string);
+	return evaluateArray(arry);
+}

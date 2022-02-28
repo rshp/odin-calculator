@@ -1,5 +1,15 @@
 /* Typography */
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+.calculator-display {
+	font-family: 'Open Sans', sans-serif;
+	color: bisque;
+}
+.top-display {
+	font-size: 1rem;
+}
+.bottom-display {
+	font-size: 2rem;
+}
 /* Layout */
 * {
 	margin: 0px;
@@ -26,10 +36,13 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	display: flex;
+	align-items: center;
 	flex-direction: column;
 	height: 50vh;
+	min-height: 300px;
 	padding: 1em;
 	gap: 1rem;
+	aspect-ratio: 0.7;
 }
 
 .calculator-display {
@@ -37,6 +50,8 @@ body {
 	height: 10vh;
 	display: flex;
 	flex-direction: column;
+	align-items: flex-end;
+	align-self: flex-end;
 }
 
 .top-display {
@@ -50,8 +65,8 @@ body {
 .calculator-keyboard {
 	flex: 3;
 	display: grid;
-	gap: 1rem 1rem;
-	width: 30vh;
+	gap: 3% 3%;
+	width: 100%;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 

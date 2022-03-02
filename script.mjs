@@ -68,5 +68,17 @@ calculatorKeyboard.addEventListener('click', (e) => {
 			calculatorResultDiv.innerHTML = calculator.resultWindow;
 			break;
 	}
-	calculatorExpressionDiv.innerHTML = calculator.expressionWindow;
+
+	calculatorExpressionDiv.innerHTML = highlightOperators(
+		calculator.expressionWindow
+	);
 });
+
+function highlightOperators(string) {
+	string = string.replaceAll('/', '<span class="highlight">/</span>');
+	string = string.replaceAll('+', '<span class="highlight">+</span>');
+	string = string.replaceAll('-', '<span class="highlight">-</span>');
+	string = string.replaceAll('*', '<span class="highlight">*</span>');
+	return string;
+}
+//console.log(highlightOperators('2+3*2/8'));

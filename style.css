@@ -1,7 +1,7 @@
 /* Typography */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 .calculator-display {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;
 	color: bisque;
 }
 .top-display {
@@ -100,4 +100,10 @@ body {
 	);
 	border-radius: 1rem;
 	box-shadow: 0px 0px 34px 15px #000000;
+}
+
+button {
+	color: bisque;
+	background-color: transparent;
+	border-radius: 0.5rem;
 }

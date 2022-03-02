@@ -3,7 +3,6 @@ const calculator = new CalculatorCounstructor();
 const calculatorKeyboard = document.querySelector('.calculator-keyboard');
 const calculatorExpressionDiv = document.querySelector('.bottom-display');
 const calculatorResultDiv = document.querySelector('.top-display');
-
 calculatorKeyboard.addEventListener('click', (e) => {
 	switch (e.target.innerHTML) {
 		case '1':

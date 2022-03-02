@@ -61,13 +61,23 @@ function evaluateFiltered(expression) {
 	}
 	while (expression.indexOf('-') !== -1) {
 		indx = expression.indexOf('-');
-		localRes = expression[indx - 1] - expression[indx + 1];
-		expression.splice(indx - 1, 3, localRes);
+		if (expression[indx - 1] === undefined) {
+			localRes = -1 * expression[indx + 1];
+			expression.splice(indx, 2, localRes);
+		} else {
+			localRes = expression[indx - 1] - expression[indx + 1];
+			expression.splice(indx - 1, 3, localRes);
+		}
 	}
 	while (expression.indexOf('+') !== -1) {
 		indx = expression.indexOf('+');
-		localRes = expression[indx - 1] + expression[indx + 1];
-		expression.splice(indx - 1, 3, localRes);
+		if (expression[indx - 1] === undefined) {
+			localRes = expression[indx + 1];
+			expression.splice(indx, 2, localRes);
+		} else {
+			localRes = expression[indx - 1] + expression[indx + 1];
+			expression.splice(indx - 1, 3, localRes);
+		}
 	}
 	return +expression; //get rid of single member array
 }

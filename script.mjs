@@ -2,9 +2,9 @@ import { CalculatorCounstructor } from './calculator.mjs';
 const calculator = new CalculatorCounstructor();
 const calculatorKeyboard = document.querySelector('.calculator-keyboard');
 const calculatorExpressionDiv = document.querySelector('.bottom-display');
+const calculatorResultDiv = document.querySelector('.top-display');
 
 calculatorKeyboard.addEventListener('click', (e) => {
-	console.log(e);
 	switch (e.target.innerHTML) {
 		case '1':
 			calculator.pushDigit(1);
@@ -36,23 +36,38 @@ calculatorKeyboard.addEventListener('click', (e) => {
 		case '0':
 			calculator.pushDigit(0);
 			break;
+		case '(':
+			calculator.pushParenthesisLeft();
+			break;
+		case ')':
+			calculator.pushParenthesisRight();
+			break;
+		case '+':
+			calculator.pushOperator('+');
+			break;
+		case '-':
+			calculator.pushOperator('-');
+			break;
+		case '*':
+			calculator.pushOperator('*');
+			break;
+		case '/':
+			calculator.pushOperator('/');
+			break;
+		case '.':
+			calculator.pushDecimalPoint();
+			break;
+		case '':
+			calculator.pushBackspace();
+			break;
+		case 'AC':
+			calculator.pushClearAll();
+			calculatorResultDiv.innerHTML = calculator.resultWindow;
+			break;
+		case '=':
+			calculator.pushEqual();
+			calculatorResultDiv.innerHTML = calculator.resultWindow;
+			break;
 	}
 	calculatorExpressionDiv.innerHTML = calculator.expressionWindow;
 });
-
-// console.log(calculatorKeyboard);
-
-// calculator.pushDigit(7);
-// //calculator.pushDigit(0);
-// //calculator.pushDigit(0);
-// calculator.pushOperator('*');
-// calculator.pushDigit(2);
-// //calculator.pushDigit(2);
-// calculator.pushOperator('^');
-// calculator.pushDigit(2);
-// calculator.pushDigit(0);
-// calculator.pushBackspace();
-// calculator.pushEqual();
-
-// console.log(calculator.expressionWindow);
-// console.log(calculator.resultWindow);
